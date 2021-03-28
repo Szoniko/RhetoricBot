@@ -21,13 +21,13 @@ client: Bot = commands.Bot(command_prefix=".")
 async def on_ready():
     print("ready")
 
-@bot.event
+@client.event
 async def on_member_join(member):
     channel = discord.utils.get(member.guild.text_channels, name="welcome")
     join_responses = []
     await channel.send(f'{random.choice(join_responses)}'
     
-@bot.event
+@client.event
 async def on_member_leave(member):
     channel = discord.utils.get(member.guild.text_channels, name="goodbye")
     leave_responses = []
