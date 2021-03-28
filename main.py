@@ -21,11 +21,28 @@ client: Bot = commands.Bot(command_prefix=".")
 async def on_ready():
     print("ready")
 
+@bot.event
+async def on_member_join(member):
+    channel = discord.utils.get(member.guild.text_channels, name="welcome")
+    join_responses = []
+    await channel.send(f'{random.choice(join_responses)}'
+    
+@bot.event
+async def on_member_leave(member):
+    channel = discord.utils.get(member.guild.text_channels, name="goodbye")
+    leave_responses = []
+    await channel.send(f'{random.choice(leave_responses)}'
+
 ##################################################
 
 @client.command()
 async def ping(ctx):
     ctx.send("pong")
+
+@client.command()
+async def purge(ctx, amount=11):
+    if ctx.author.guild_permissions.manage_messages:
+        await ctx.channel.purge(limit=amount)
     
 @client.command()
 async def meme(ctx):
