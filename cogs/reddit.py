@@ -4,13 +4,16 @@ from discord.ext import commands
 
 class Reddit(commands.Cog):
 
+    #initialize
     def __init__(self, client):
         self.client = client
 
+    #confirm that cog is working
     @commands.Cog.listener()
     async def on_ready(self):
-        print('bot is online')   
+        print('cog reddit is loaded')   
 
+    #random meme 
     @commands.command()
     async def meme(self, ctx):
         subreddit = config.reddit.subreddit("memes")
@@ -31,7 +34,7 @@ class Reddit(commands.Cog):
         em.set_image(url = url)
         
         await ctx.send(embed= em)
-
+    #subreddit command
     @commands.command()
     async def sub(self, ctx,subred):
         subreddit = config.reddit.subreddit(subred)

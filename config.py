@@ -8,6 +8,7 @@ Please follow the instructions next to variables
 """
 
 # discord bot token
+
 auth = "PASTE_YOUR_TOKEN_HERE"
 
 # reddit app 
@@ -19,3 +20,16 @@ reddit = praw.Reddit(
     username="username",
     password="password"
 )
+
+# The prefix of the bot
+
+command_prefix = "."
+
+# leave and join respones, they have to be arrays
+# the {member.mention} represent the joining users name 
+
+join_responses = []
+
+# leave 
+
+leave_responses = []
