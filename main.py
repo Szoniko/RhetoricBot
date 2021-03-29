@@ -14,11 +14,24 @@ client: Bot = commands.Bot(command_prefix=".")
 async def on_ready():
     print("ready")
 
+@client.event
+async def on_member_join(member):
+    channel = discord.utils.get(member.guild.text_channels, name="welcome")
+    join_responses = []
+    await channel.send(f'{random.choice(join_responses)}'
+    
+@client.event
+async def on_member_leave(member):
+    channel = discord.utils.get(member.guild.text_channels, name="goodbye")
+    leave_responses = []
+    await channel.send(f'{random.choice(leave_responses)}'
+
 ##################################################
 
 @client.command()
 async def ping(ctx):
     ctx.send("pong")
+
 
 if __name__ == "__main__":
     for file in os.listdir("./cogs"):
