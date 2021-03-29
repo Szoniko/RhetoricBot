@@ -1,6 +1,10 @@
+import praw
+
 """
+
 CONFIGURATION FILE FOR THE RHETORIC BOT
 Please follow the instructions next to variables 
+
 """
 
 # discord bot token

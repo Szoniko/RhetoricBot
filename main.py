@@ -5,11 +5,10 @@ import time
 import random
 import praw
 import config
-
-
-
+import os
 
 client: Bot = commands.Bot(command_prefix=".")
+
 
 @client.event
 async def on_ready():
@@ -20,46 +19,16 @@ async def on_ready():
 @client.command()
 async def ping(ctx):
     ctx.send("pong")
-    
-@client.command()
-async def meme(ctx):
-    subreddit = config.reddit.subreddit("memes")
-    all_subs = []
 
-    top = subreddit.top(limit = 50)
-
-    for submission in top:
-        all_subs.append(submission)
-
-    random_sub = random.choice(all_subs)
-
-    name = random_sub.title
-    url = random_sub.url
-
-    em = discord.Embed(title = name)
-
-    em.set_image(url = url)
-    
-    await ctx.send(embed= em)
-
-@client.command()
-async def sub(ctx,subred):
-    subreddit = config.reddit.subreddit(subred)
-    all_subs = []
-
-    top = subreddit.top(limit = 50)
-
-    for submission in top:
-        all_subs.append(submission)
-
-    random_sub = random.choice(all_subs)
-
-    name = random_sub.title
-    url = random_sub.url
-
-    em = discord.Embed(title = name)
-
-    em.set_image(url = url)
-
+if __name__ == "__main__":
+    for file in os.listdir("./cogs"):
+        if file.endswith("py"):
+            extension = file[:-3]
+            try:
+                client.load_extension(f"cogs.{extension}")
+                print(f"Loaded extension '{extension}'")
+            except Exception as e:
+                exception = f"{type(e).__name__}: {e}"
+                print(f"Failed to load extension '{extension}'\n{exception}")
 
 client.run(config.auth)
