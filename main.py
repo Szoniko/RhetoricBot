@@ -7,7 +7,7 @@ import config
 import os
 import hypixel
 client: Bot = commands.Bot(command_prefix=config.command_prefix)
-
+client.remove_command('help')
 
 @client.event
 async def on_ready():

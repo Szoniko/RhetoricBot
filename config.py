@@ -9,10 +9,10 @@ Please follow the instructions next to variables
 
 # discord bot token
 
-auth = "PASTE_YOUR_TOKEN_HERE"
+auth = "YOUR_KEY_HERE"
 
 # reddit app 
-
+"""
 reddit = praw.Reddit(
     client_id="client id",
     client_secret="client secret",
@@ -20,11 +20,11 @@ reddit = praw.Reddit(
     username="username",
     password="password"
 )
-
+"""
 # hypixel api key(s)
 # You can use one, or multiple, but preferably one
 
-hypixel.setKeys(['API_KEY_HERE'])
+#hypixel.setKeys(['API_KEY_HERE'])
 
 # The prefix of the bot
 
@@ -33,8 +33,8 @@ command_prefix = "."
 # leave and join respones, they have to be arrays
 # the {member.mention} represent the joining users name 
 
-join_responses = [f"{member.mention} joined the guild"]
+join_responses = []
 
 # leave 
 
-leave_responses = [f"{member.mention} left the guild."]
+leave_responses = []
