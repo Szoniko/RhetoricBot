@@ -11,7 +11,7 @@ class Purge(commands.Cog):
     #confirm that cog loaded
     @commands.Cog.listener()
     async def on_ready(self):
-        print('cog purge is loaded')
+        print("cog 'Purge' is loaded")
 
     #purge command
     @commands.command()
