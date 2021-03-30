@@ -1,12 +1,11 @@
 import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
-import time
 import random
 import praw
 import config
 import os
-
+import hypixel
 client: Bot = commands.Bot(command_prefix=config.command_prefix)
 
 
@@ -18,7 +17,7 @@ async def on_ready():
 async def on_member_join(member):
     channel = discord.utils.get(member.guild.text_channels, name="welcome")
     await channel.send(f'{random.choice(config.join_responses)}')
-    
+
 @client.event
 async def on_member_leave(member):
     channel = discord.utils.get(member.guild.text_channels, name="goodbye")
@@ -28,11 +27,13 @@ async def on_member_leave(member):
 
 @client.command()
 async def ping(ctx):
-    await ctx.send("pong")
+    await ctx.send(f"Pong! {round(client.latency * 1000)} ms")
 
 
 if __name__ == "__main__":
     for file in os.listdir("./cogs"):
+        if file.startswith("--"):
+            continue
         if file.endswith("py"):
             extension = file[:-3]
             try:
