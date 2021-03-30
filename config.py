@@ -1,4 +1,4 @@
-import praw, hypixel
+import hypixel
 
 """
 
@@ -12,6 +12,7 @@ Please follow the instructions next to variables
 auth = "YOUR_KEY_HERE"
 
 # reddit app 
+
 """
 reddit = praw.Reddit(
     client_id="client id",
@@ -21,10 +22,13 @@ reddit = praw.Reddit(
     password="password"
 )
 """
-# hypixel api key(s)
-# You can use one, or multiple, but preferably one
 
-#hypixel.setKeys(['API_KEY_HERE'])
+# hypixel api key(s)
+# You can use one, or multiple, but preferably one, uncomment before running bot
+
+
+# hypixel.setKeys(['API_KEY_HERE'])
+
 
 # The prefix of the bot
 
@@ -38,3 +42,4 @@ join_responses = []
 # leave 
 
 leave_responses = []
+

@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
 import random
-import praw
+#import praw
 import config
 import os
 import hypixel
