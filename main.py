@@ -23,6 +23,10 @@ async def on_member_leave(member):
     channel = discord.utils.get(member.guild.text_channels, name="goodbye")
     await channel.send(f'{random.choice(config.leave_responses)}')
 
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send(f"Error! `MissingRequiredArgument`. Check {config.command_prefix}help for help.")
 ##################################################
 
 @client.command()
