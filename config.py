@@ -9,7 +9,7 @@ Please follow the instructions next to variables
 
 # discord bot token
 
-auth = "YOUR_KEY_HERE"
+auth = "NOTHING WAS HERE"
 
 # reddit app 
 

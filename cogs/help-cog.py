@@ -1,6 +1,6 @@
 import discord, config
 from discord.ext import commands
-
+prefix = config.command_prefix
 
 class Help(commands.Cog):
 
@@ -17,6 +17,7 @@ class Help(commands.Cog):
 
     @commands.command()
     async def help(self, ctx):
+        global prefix
         embed = discord.Embed(
             title = 'Commands',
             description = '',
@@ -24,8 +25,8 @@ class Help(commands.Cog):
         )
         # You can edit the text or name stuff
         embed.set_footer(text='https://github.com/Szoniko/RhetoricBot')
-        embed.add_field(name='.help', value='Sends this embed')
-        # Just add "embed.add_field(name='.COMMAND'), value='DESCRIPTION'" to add more fields
+        embed.add_field(name=f'{prefix}help', value='Sends this embed')
+        # Just add "embed.add_field(name=f'{prefix}COMMAND'), value='DESCRIPTION'" to add more fields
 
         await ctx.send(embed=embed)
 
