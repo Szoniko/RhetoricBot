@@ -45,6 +45,8 @@ class CommandErrorHandler(commands.Cog):
             await ctx.send("Error! `CheckFailure`.")
         elif isinstance(error, commands.ExtensionError):
             await ctx.send("Error! `ExtensionError`.")
+        else:
+            await ctx.send(f"Unhandled error! Please contact your administrator about this!\n{error}")
 # don't touch this
 def setup(client):
     client.add_cog(CommandErrorHandler(client))
