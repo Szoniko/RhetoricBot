@@ -1,5 +1,7 @@
+config.py
 *.pyc
 __pycache__/
 keys.txt
 ./__pycache__
 ./cogs/__pycache__/
+cogs/__pycache__/*
