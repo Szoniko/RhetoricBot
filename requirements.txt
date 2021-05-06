@@ -1,4 +1,3 @@
 discord.py
 praw
-hypixel
 PIL

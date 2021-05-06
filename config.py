@@ -1,4 +1,3 @@
-import hypixel
 
 """
 
@@ -9,26 +8,11 @@ Please follow the instructions next to variables
 
 # discord bot token
 
-auth = "NOTHING WAS HERE"
+auth = ""
 
-# reddit app 
+# hypixel api key
 
-"""
-reddit = praw.Reddit(
-    client_id="client id",
-    client_secret="client secret",
-    user_agent="this can be anything",
-    username="username",
-    password="password"
-)
-"""
-
-# hypixel api key(s)
-# You can use one, or multiple, but preferably one, uncomment before running bot
-
-
-# hypixel.setKeys(['API_KEY_HERE'])
-
+HYPIXEL_API_KEY = "YOU_KEY_HERE"
 
 # The prefix of the bot
 
