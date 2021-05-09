@@ -2,10 +2,8 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
 import random
-#import praw
 import config
 import os
-import hypixel
 client: Bot = commands.Bot(command_prefix=config.command_prefix)
 client.remove_command('help')
 
