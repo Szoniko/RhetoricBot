@@ -52,6 +52,10 @@ class HypixelUtils:
         description = '',
         )
 
+        errorembed = discord.Embed(
+            title = "Error!",
+            colour = discord.Colour.red()
+        )
         for i in range(len(g['guild']['members'])):
             if g['guild']['members'][i]['uuid'] == uuid:
                 expHistory = g['guild']['members'][i]['expHistory']
@@ -63,3 +67,7 @@ class HypixelUtils:
                     embed.colour = discord.Colour.red()
 
                 return embed
+
+        errorembed.add_field(name="Player not found", value=f"{player} is not in the guild.")
+
+        return errorembed
