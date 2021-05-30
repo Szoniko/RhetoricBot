@@ -22,7 +22,9 @@ class HypixelUtils:
             x = requests.get(
                 "https://playerdb.co/api/player/minecraft/" + uuid)
             x = x.json()
+            # Getting the name and sanitizing it
             name = x['data']['player']['username']
+            name = name.replace("_", "\\_")
 
             expHistory = expHistory = g['guild']['members'][i]['expHistory']
             expHistory = sum(expHistory.values())
