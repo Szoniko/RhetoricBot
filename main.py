@@ -4,8 +4,10 @@ from discord.ext.commands import Bot
 import random
 import config
 import os
+from discord_slash import SlashCommand 
 client: Bot = commands.Bot(command_prefix=config.command_prefix)
 client.remove_command('help')
+slash = SlashCommand(client, sync_commands=True)
 
 @client.event
 async def on_ready():
