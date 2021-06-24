@@ -5,3 +5,4 @@ keys.txt
 ./__pycache__
 ./cogs/__pycache__/
 cogs/__pycache__/*
+./config.py

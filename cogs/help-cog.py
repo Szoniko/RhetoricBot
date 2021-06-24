@@ -1,6 +1,6 @@
 import discord, config
 from discord.ext import commands
-prefix = config.command_prefix
+prefix = config.COMMAND_PREFIX
 
 class Help(commands.Cog):
 
