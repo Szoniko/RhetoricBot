@@ -5,23 +5,13 @@ import random
 import config
 import os
 from discord_slash import SlashCommand 
-client: Bot = commands.Bot(command_prefix=config.command_prefix)
+client: Bot = commands.Bot(command_prefix=config.COMMAND_PREFIX)
 client.remove_command('help')
 slash = SlashCommand(client, sync_commands=True)
 
 @client.event
 async def on_ready():
     print("ready")
-
-@client.event
-async def on_member_join(member):
-    channel = discord.utils.get(member.guild.text_channels, name="welcome")
-    await channel.send(f'{random.choice(config.join_responses)}')
-
-@client.event
-async def on_member_leave(member):
-    channel = discord.utils.get(member.guild.text_channels, name="goodbye")
-    await channel.send(f'{random.choice(config.leave_responses)}')
 
 ##################################################
 
@@ -43,4 +33,4 @@ if __name__ == "__main__":
                 exception = f"{type(e).__name__}: {e}"
                 print(f"Failed to load extension '{extension}'\n{exception}")
 
-client.run(config.auth)
+client.run(config.AUTH)
