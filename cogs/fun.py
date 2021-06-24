@@ -1,5 +1,6 @@
 import discord
 import config
+import requests
 from discord.ext import commands
 
 
@@ -34,6 +35,11 @@ class Fun(commands.Cog):
         embed.add_field(name="Im gonna break your fucking head",
                         value="AAAAAAAAAAAAAAAH")
         await ctx.send(embed=embed)
+
+    @commands.command()
+    async def duck(self, ctx):
+        url = requests.get("https://random-d.uk/api/v2/random").json()['url']
+        await ctx.send(url)
 
 
 # don't touch this
