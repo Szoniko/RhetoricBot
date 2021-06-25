@@ -15,7 +15,7 @@ async def on_ready():
 
 ##################################################
 
-@client.command()
+@slash.slash(name="ping")
 async def ping(ctx):
     await ctx.send(f"Pong! {round(client.latency * 1000)} ms")
 

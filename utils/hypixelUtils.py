@@ -48,7 +48,7 @@ class HypixelUtils:
     def get_player_gexp(player):
         uuid = HypixelUtils.get_player_uuid_from_ign(player)
         g = requests.get("https://api.hypixel.net/guild?key=" +
-                         config.HYPIXEL_API_KEY + "&name=" + config.guild_name).json()
+                         config.HYPIXEL_API_KEY + "&name=" + config.GUILD_NAME).json()
 
         embed = discord.Embed(
             title=f"Player GEXP in the last week.",
