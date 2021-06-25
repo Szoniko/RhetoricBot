@@ -1,7 +1,7 @@
 import discord
 import config
-import requests
 from discord.ext import commands
+from discord_slash import cog_ext, SlashContext
 
 
 class Fun(commands.Cog):
@@ -17,16 +17,16 @@ class Fun(commands.Cog):
 
     """USE THE DECORATOR @commands.command INSTEAD OF @client.command"""
 
-    @commands.command(aliases=["_.", "-.", ".."])
-    async def imannoyed(self, ctx):
+    @cog_ext.cog_slash(name="imannoyed")
+    async def imannoyed(self, ctx: SlashContext):
         await ctx.send("why are you annoyed?")
 
-    @commands.command()
-    async def hentai(self, ctx):
+    @cog_ext.cog_slash(name="hentai")
+    async def hentai(self, ctx: SlashContext):
         await ctx.send("`https://bit.ly/2KAOWap`")
 
-    @commands.command(aliases=["cmafomt", "imnotafurry"])
-    async def callmeafurryonemoretime(self, ctx):
+    @cog_ext.cog_slash(name="Dont-call-me-a-furry")
+    async def callmeafurryonemoretime(self, ctx: SlashContext):
         embed = discord.Embed(
             title="I swear",
             description="If you say it one more goddamn time",
@@ -35,11 +35,6 @@ class Fun(commands.Cog):
         embed.add_field(name="Im gonna break your fucking head",
                         value="AAAAAAAAAAAAAAAH")
         await ctx.send(embed=embed)
-
-    @commands.command()
-    async def duck(self, ctx):
-        url = requests.get("https://random-d.uk/api/v2/random").json()['url']
-        await ctx.send(url)
 
 
 # don't touch this
